@@ -27,5 +27,6 @@ pipeline {
                 sh "terraform apply -var-file="vars/qa.auto.tfvars -auto-approve"
             }   
         }
+       }
 
     }

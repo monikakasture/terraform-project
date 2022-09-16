@@ -2,8 +2,8 @@
 
 resource "azurerm_linux_virtual_machine" "example" {
   name                = var.environment
-  resource_group_name = azurerm_resource_group.rgtest.name
-  location            = azurerm_resource_group.rgtest.location
+  resource_group_name = var.rg_name
+  location            = "westus2"
   size                = var.size
   admin_username      = "adminuser"
   network_interface_ids = [

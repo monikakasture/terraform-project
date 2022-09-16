@@ -10,7 +10,7 @@ terraform {
     organization = "monikakasture"
 
     workspaces {
-      prefix = "project-"
+      prefix = "env-"
     }
   }
 
@@ -19,8 +19,5 @@ terraform {
 provider   "azurerm"   { 
    features   {} 
  }
-resource   "azurerm_resource_group"   "rgtest"   { 
-   name   =   var.rg_name
-   location   =   "westeurope" 
- }
+
 

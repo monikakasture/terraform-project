@@ -17,14 +17,14 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh "terraform plan -var-file="vars/qa.auto.tfvars"
+                sh 'terraform plan -var-file="vars/qa.auto.tfvars"'
             }   
         }
         input 'Deploy stack?'
 
         stage('terraform apply') {
             steps {
-                sh "terraform apply -var-file="vars/qa.auto.tfvars -auto-approve"
+                sh 'terraform apply -var-file="vars/qa.auto.tfvars" -auto-approve'
             }   
         }
        }

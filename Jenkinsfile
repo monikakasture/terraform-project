@@ -8,8 +8,10 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/monikakasture/terraform-project.git']]])     
             }
         }
+        
         stage('terraform init') {
             steps {
+                sh "cd terraform-project",
                 sh "terraform init"
             }   
         }

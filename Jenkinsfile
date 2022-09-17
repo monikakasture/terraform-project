@@ -1,6 +1,9 @@
 pipeline {
     agent any 
     
+    tools {
+     terraform 'terraform'
+    }
    
     stages {
         stage('Cloning Git') {

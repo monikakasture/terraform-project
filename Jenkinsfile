@@ -13,7 +13,7 @@ pipeline {
         }
        stage('terraform workit') { 
         steps{
-                 sh 'export TF_WORKSPACE="qa"'
+                 sh 'export TF_WORKSPACE="one"'
                  }
        }
         stage('terraform init') {  

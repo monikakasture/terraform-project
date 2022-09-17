@@ -12,7 +12,7 @@ pipeline {
             }
         }
        stage('terraform workit') { 
-        step{
+        steps{
                  sh 'export TF_WORKSPACE=qa'
                  }
        }

@@ -15,7 +15,7 @@ pipeline {
         stage('terraform init') {  
             steps {
                sh 'export TF_WORKSPACE="qa"'
-               sh 'terraform init'
+               sh 'terraform init -input=false'
                       
             }   
         }

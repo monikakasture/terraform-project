@@ -11,13 +11,14 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/monikakasture/terraform-project.git']]])     
             }
         }
-        
-        stage('terraform init') {
+       stage('terraform init') { 
+        step{
+                 sh 'export TF_WORKSPACE=qa'
+                 }
+       }
+        stage('terraform init') {  
             steps {
-                sh 'cd cicdpipeline'
-                sh 'export TF_WORKSPACE=qa'
-                sh 'terraform init'
-                
+               sh 'terraform init'       
             }   
         }
         stage('terraform plan') {

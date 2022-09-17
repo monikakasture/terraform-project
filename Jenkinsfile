@@ -21,7 +21,6 @@ pipeline {
                 sh 'terraform plan -var-file="vars/qa.auto.tfvars"'
             }   
         }
-        input 'Deploy stack?'
 
         stage('terraform apply') {
             steps {
